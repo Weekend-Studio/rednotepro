@@ -29,8 +29,8 @@ export default function Home() {
             </div>
           </nav>
         </header>
-        <div className="flex flex-col md:flex-row items-center max-w-[1200px] justify-between w-full mx-auto px-4 md:px-0">
-          <div className="flex-1 text-center md:text-left mr-12">
+        <div className="flex flex-col md:flex-row items-center max-w-[1200px] justify-between w-full mx-auto mt-24 md:mt-0">
+          <div className="flex-1 text-center md:text-left mr-0 md:mr-12">
             <Image src="/logo.svg" alt="RedNote Pro" width={100} height={100} className="mx-auto md:mx-0" />
             <h1 className="text-4xl md:text-6xl text-red-500 font-extrabold my-4">RedPro</h1>
             <p className="text-xl md:text-2xl text-red-400">Want to grow your business on RedNote (Xiaohongshu)? <br className="hidden md:block"/> We are here to help.</p>
