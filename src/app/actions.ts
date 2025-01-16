@@ -14,8 +14,8 @@ export async function submitForm(formData: FormData) {
     console.log('Form submission:', { name, email, message });
     const submission = new Submission({ name, email, message });
     await submission.save();
-    return { success: true, message: 'Form submitted successfully' };
+    return;
   } catch (error) {
-    return { success: false, message: 'Form submission failed' };
+    return;
   }
 }

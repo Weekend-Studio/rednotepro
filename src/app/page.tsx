@@ -4,6 +4,7 @@ import Particles from "@/components/ui/particles";
 import { ArrowRightIcon, SendIcon } from "lucide-react";
 import Image from "next/image";
 import { submitForm } from "@/app/actions";
+
 export default function Home() {
   return (
     <div>
@@ -168,26 +169,10 @@ export default function Home() {
 
         <div id="contact" className="flex flex-col items-center justify-center w-full mx-auto px-4 py-16">
           <h2 className="text-4xl font-bold text-red-500">Step 1: Submit Your Inquiry</h2>
-          <form 
-            onSubmit={(e) => {
-              e.preventDefault();
-              submitForm(new FormData(e.target as HTMLFormElement));
-              alert('Message sent successfully!');
-            }}
+          <form
+            action={submitForm}
             className="w-full max-w-lg mt-8 space-y-6"
           >
-            <div className="flex flex-col space-y-2">
-              <label htmlFor="name" className="text-gray-700 font-medium">Name</label>
-              <input 
-                name="name"
-                type="text"
-                id="name"
-                className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                placeholder="Enter your name"
-                required
-              />
-            </div>
-
             <div className="flex flex-col space-y-2">
               <label htmlFor="email" className="text-gray-700 font-medium">Email</label>
               <input
@@ -207,8 +192,7 @@ export default function Home() {
                 id="message"
                 rows={4}
                 className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                placeholder="What would you like to know?"
-                required
+                placeholder="(Optional) Want to leave a message?"
               />
             </div>
 
