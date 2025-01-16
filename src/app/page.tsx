@@ -4,8 +4,11 @@ import Particles from "@/components/ui/particles";
 import { ArrowRightIcon, SendIcon } from "lucide-react";
 import Image from "next/image";
 import { submitForm } from "@/app/actions";
+import { useState } from "react";
 
 export default function Home() {
+  const [showSuccess, setShowSuccess] = useState(false);
+
   return (
     <div>
       <main>
@@ -170,9 +173,19 @@ export default function Home() {
         <div id="contact" className="flex flex-col items-center justify-center w-full mx-auto px-4 py-16">
           <h2 className="text-4xl font-bold text-red-500">Step 1: Submit Your Inquiry</h2>
           <form
-            action={submitForm}
+            action={async (formData) => {
+              await submitForm(formData);
+              setShowSuccess(true);
+              setTimeout(() => setShowSuccess(false), 5000); // Hide after 5 seconds
+            }}
             className="w-full max-w-lg mt-8 space-y-6"
           >
+            {showSuccess && (
+              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
+                <span className="block sm:inline">Thank you! Your message has been sent successfully.</span>
+              </div>
+            )}
+            
             <div className="flex flex-col space-y-2">
               <label htmlFor="email" className="text-gray-700 font-medium">Email</label>
               <input
