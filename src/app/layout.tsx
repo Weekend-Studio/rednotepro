@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,27 +12,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-const GoogleAnalytics = () => {
-  return (
-    <>
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-826T9JVY78"
-      />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-826T9JVY78');
-          `,
-        }}
-      />
-    </>
-  );
-};
 
 export const metadata: Metadata = {
   title: "RedNote Pro",
@@ -46,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <GoogleAnalytics />
+        <GoogleAnalytics gaId="G-826T9JVY78" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
