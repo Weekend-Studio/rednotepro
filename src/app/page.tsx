@@ -12,23 +12,6 @@ export default function Home() {
   return (
     <div>
       <main>
-        <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm border-b border-red-100 z-50">
-          <nav className="max-w-7xl mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-8">
-                <Image src="/logo.svg" alt="RedNote Pro" width={32} height={32} />
-                <div className="flex items-center gap-6">
-                  <a href="/" className="text-red-500 font-medium hover:text-red-600 transition-colors">
-                    Home
-                  </a>
-                  <a href="/blogs" className="text-gray-600 font-medium hover:text-red-500 transition-colors">
-                    Blogs
-                  </a>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </header>
         <div className="flex flex-col md:flex-row items-center max-w-[1200px] justify-between w-full mx-auto mt-24 md:mt-0">
           <div className="flex-1 text-center md:text-left mr-0 md:mr-12">
             <Image src="/logo.svg" alt="RedNote Pro" width={100} height={100} className="mx-auto md:mx-0" />
